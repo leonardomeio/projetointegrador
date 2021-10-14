@@ -1,24 +1,19 @@
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { IonicModule } from '@ionic/angular';
-import { FormsModule } from '@angular/forms';
-import { HomePage } from './home.page';
+import { Component, OnInit } from '@angular/core';
 
-import { HomePageRoutingModule } from './home-routing.module';
-
-
-@NgModule({
-  imports: [
-    CommonModule,
-    FormsModule,
-    IonicModule,
-    HomePageRoutingModule
-  ],
-  declarations: [HomePage]
+@Component({
+  selector: 'app-controllers',
+  templateUrl: './controllers.page.html',
+  styleUrls: ['./controllers.page.scss'],
 })
-export class HomePageModule {}
+export class ControllersPage implements OnInit {
 
-/*
+  constructor() { }
+
+  ngOnInit() {
+  }
+
+}
+/*  
 Angular.module('calculoImcApp')
 .controller('calculoController', function($scope, $rootScope, $ionicPopup, $location, calculoImc) {
 

@@ -1,0 +1,76 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>templates</ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-view title="Cálculo de IMC" class="bar-positive">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <h1>Cálculo</h1>
+    <p>Preencha os campos abaixo para calcular seu IMC</p>
+
+    <form class="list" ng-submit="calcular(dados)">
+      <label class="item item-input" name="peso">
+        <span class="input-label">Peso</span>
+        <input type="number" step="0.01" min="0" placeholder="Peso em kg" ng-model="dados.peso">
+      </label>
+      <label class="item item-input" name="altura">
+        <span class="input-label">Altura</span>
+        <input type="number" step="0.01" min="0" placeholder="Altura em metros" ng-model="dados.altura">
+      </label>
+
+      <button class="button button-block button-positive" type="submit">Calcular</button>
+    </form>
+  </ion-content>
+</ion-view>
+<ion-view title="Resultado" class="bar-positive">
+  <ion-content overflow-scroll="true" padding="true" class="has-header">
+    <h1>Resultado</h1>
+
+    <div class="list list-inset">
+      <div class="item"><b>IMC: </b>{{ imc | number:2 }}</div>
+      <div class="item"><b>Faixa: </b> {{ faixa }}</div>
+    </div>
+
+    <h2>Tabela de IMC</h1>
+    <div ng-include="'templates/tabelaimc.html'"></div>
+
+    <button ui-sref="calculo" class="button button-block button-positive" type="button">Outro calculo</button>
+  </ion-content>
+</ion-view>
+<table>
+  <tr>
+    <td><b>Valor</b></th>
+    <td><b>Resultado</b></th>
+  </tr>
+  <tr>
+    <td>Abaixo de 17</td>
+    <td>Muito abaixo do peso</td>
+  </tr>
+  <tr>
+    <td>Entre 17 e 18,49</td>
+    <td>Abaixo do peso</td>
+  </tr>
+  <tr>
+    <td>Entre 18,5 e 24,99</td>
+    <td>Peso normal</td>
+  </tr>
+  <tr>
+    <td>Entre 25 e 29,99</td>
+    <td>Acima do peso</td>
+  </tr>
+  <tr>
+    <td>Entre 30 e 34,99</td>
+    <td>Obesidade I</td>
+  </tr>
+  <tr>
+    <td>Entre 35 e 39,99</td>
+    <td>Obesidade II (severa)</td>
+  </tr>
+  <tr>
+    <td>Acima de 40</td>
+    <td>Obesidade III (mórbida)</td>
+  </tr>
+</table>
+<ion-content>
+
+</ion-content>
